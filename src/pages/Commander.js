@@ -67,9 +67,8 @@ export const  Commander= () => {
     }
 
     const diceVisibleHandle6 = () => {
-        console.log("Dice visible was lcicked")
         setDiceVisible(true);
-        console.log("")
+  
         setHiddenDice6(true)
 
         setHiddenDice12(false)
@@ -78,9 +77,9 @@ export const  Commander= () => {
     }
 
     const diceVisibleHandle4 = () => {
-        console.log("Dice visible was lcicked")
+
         setDiceVisible(true);
-        console.log("")
+ 
         setHiddenDice4(true)
 
         setHiddenDice12(false)
@@ -158,13 +157,14 @@ export const  Commander= () => {
                 
 
 
-           { display && (<div className="">
-            <div className=" flex space-x-2 ">
+           { display && (<div className=" flex flex-wrap">
+            <div className=" flex space-x-2 flex-col bg-white rounded-md" >
+                <h1 className=" text-3xl bg-blue-500 rounded-md"> Features! </h1>
                 <h1 className="text-3xl"> Roll a die! </h1> 
-                <h1 className="text-3xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle6}> D6 </h1>
-                <h1 className="text-3xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle4}> D4 </h1>
-                <h1 className="text-3xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle12}> D12 </h1>
-                <h1 className="text-3xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle20}> D20 </h1> 
+                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle6}> Roll a D6 </h1>
+                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle4}> Roll a D4 </h1>
+                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle12}> Roll a D12 </h1>
+                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle20}> Roll a D20 </h1> 
             </div>
                 <div className="flex flex-wrap justify-center">
                    {Object.keys(players).map ((player, index ) =>(

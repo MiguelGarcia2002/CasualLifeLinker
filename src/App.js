@@ -19,8 +19,9 @@ function App() {
       document.body.style.background = '#383F51'
       break
     case "/Commander":
+      //Added a quartz background to it for now
       Component = Commander
-      document.body.style.background = '#383F51'
+      document.body.style.background = '#E9DFE0'
       break
     case "/Standard":
       Component = Standard
