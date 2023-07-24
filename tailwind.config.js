@@ -9,6 +9,7 @@ module.exports = {
         redViolet: '#B91372',
         snow: '#F9F4F5',
         violet: '#23C9FF',
+        verdigris: '#00AFB9'
       },
     },
   },
