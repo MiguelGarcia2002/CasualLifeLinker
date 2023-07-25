@@ -9,8 +9,6 @@ export const DiceSix = ({ visible}) =>{
   const[diceNum, setDiceNum] = useState([1])
   const[displayResult, setDisplayResult] = useState(false)
 
-
-  
   useEffect(()=>{
       if(visible){
           setDisplayResult(false)
@@ -42,7 +40,7 @@ export const DiceSix = ({ visible}) =>{
                      
       </div>
       {displayResult && <h1 className="flex flex-row text-white text-2xl">You rolled a {diceNum[diceNum.length-1]}!</h1>}
-      {displayResult && <button onClick={handleRoll} className="text-white"> Roll! </button>  }
+      {displayResult && <button onClick={handleRoll} className="text-white"> Re-Roll! </button>  }
   </div> ) }
   </>
   )

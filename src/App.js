@@ -1,45 +1,32 @@
+import React from 'react';
 import {Home} from './pages/Home'
 import {Standard} from './pages/Standard'
 import {Commander} from './pages/Commander';
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Testing } from './pages/Testing'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+const  App = () => {
 
   let Component
-  let componentClassName = ''
-
-  switch(window.location.pathname){
-    case "/":
-      Component = Home
-      document.body.style.background = '#383F51'
-    case "/Home":
-      Component = Home
-      document.body.style.background = '#383F51'
-      break
-    case "/Commander":
-      //Added a quartz background to it for now
-      Component = Commander
-      document.body.style.background = '#E9DFE0'
-      break
-    case "/Standard":
-      Component = Standard
-      document.body.style.background = '#383F51'
-      break
-    case "/Testing":
-      Component = Testing
-      document.body.style.background = '#383F51'
-      break
-  }
+  let componentClassName;
 
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-      <Navbar/>
+    <div className="flex flex-col items-center w-full bg-quartz ">
+      
+      <BrowserRouter>
+        <Navbar/>
+          <Routes>
+            <Route path ="/" element = {<Home />}/> 
+            <Route path ="/Home" element = {<Home />}/>
+            <Route path="/Commander" element = {<Commander />}/> 
+            <Route path="/Standard" element= { <Standard />} />
+          </Routes>
+      </BrowserRouter>
+      
 
-      <Component/>
+      
     </div>
   );
 }

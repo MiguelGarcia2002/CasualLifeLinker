@@ -18,8 +18,8 @@ export const Navbar = () =>{
         <div className="w-full sticky top-0 left-0  bg-verdigris  ">
             <div className="flex flex-row p-1 items-center justify-between">
                 <div className="flex hover:cursor-pointer">
-                    <img  src={logo} className="h-20 object-contain hover:cursor-pointer" nClick={homeClick}/> 
-                    <h1  className="text-3xl hover:cursor-pointer flex justify-center items-center " style={{ marginLeft: '0' }} nClick={homeClick}> Casual Life Linker</h1>  
+                    <img  src={logo} className="h-20 object-contain hover:cursor-pointer" onClick={homeClick}/> 
+                    <h1  className="text-3xl hover:cursor-pointer flex justify-center items-center " style={{ marginLeft: '0' }} onClick={homeClick}> Casual Life Linker</h1>  
                 </div>
                 <div className="flex justify-center items-center space-x-4 mr-8">
                     <button onClick={commanderClick} href='/Commander' className="p-3 h-12 border-2 rounded-md outline-offset-2 hover:bg-snow"> Commander </button>

@@ -68,7 +68,6 @@ export const  Commander= () => {
 
     const diceVisibleHandle6 = () => {
         setDiceVisible(true);
-  
         setHiddenDice6(true)
 
         setHiddenDice12(false)
@@ -77,9 +76,7 @@ export const  Commander= () => {
     }
 
     const diceVisibleHandle4 = () => {
-
         setDiceVisible(true);
- 
         setHiddenDice4(true)
 
         setHiddenDice12(false)
@@ -87,7 +84,6 @@ export const  Commander= () => {
         setHiddenDice20(false)
     }
     const diceVisibleHandle12 = () => {
-
         setDiceVisible(true);
         setHiddenDice12(true)
 
@@ -96,9 +92,7 @@ export const  Commander= () => {
         setHiddenDice20(false)
     }
     const diceVisibleHandle20 = () => {
-        
         setDiceVisible(true);
-        
         setHiddenDice20(true)
 
         setHiddenDice12(false)
@@ -158,25 +152,22 @@ export const  Commander= () => {
 
 
            { display && (<div className=" flex flex-wrap">
-            <div className=" flex space-x-2 flex-col bg-white rounded-md" >
-                <h1 className=" text-3xl bg-blue-500 rounded-md"> Features! </h1>
-                <h1 className="text-3xl"> Roll a die! </h1> 
-                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle6}> Roll a D6 </h1>
-                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle4}> Roll a D4 </h1>
-                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle12}> Roll a D12 </h1>
-                <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle20}> Roll a D20 </h1> 
-            </div>
-                <div className="flex flex-wrap justify-center">
-                   {Object.keys(players).map ((player, index ) =>(
-                    <CommanderLifeCards hp={life} playerName={"Jogoingo"} damageCount={playerCount}/>
-                    ))}  
-                </div>
-                
-            </div>
-            )}
+                <div className="flex - col"> 
+                    <div className=" flex space-x-2 flex-col bg-white rounded-md" >
+                        <h1 className=" text-3xl bg-blue-500 rounded-md"> Features! </h1>
+                        <h1 className="text-3xl"> Roll a die! </h1> 
+                        <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle6}> Roll a D6 </h1>
+                        <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle4}> Roll a D4 </h1>
+                        <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle12}> Roll a D12 </h1>
+                        <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md" onClick={diceVisibleHandle20}> Roll a D20 </h1> 
+                        <h1 className="text-2xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"> Restart games</h1>
+                    </div>
 
-            {hiddenDice12 && <div className="flex flex-col items-center">
-                <DiceTwenty visible={diceVisible}/>
+                    <div className="flex flex-wrap justify-center">
+                    {Object.keys(players).map ((player, index ) =>(
+                        <CommanderLifeCards hp={life} playerName={"Jogoingo"} damageCount={playerCount}/>
+                        ))}  {hiddenDice12 && <div className="flex flex-col items-center">
+                <DiceTwelve visible={diceVisible}/>
                 <h1 className="hover:cursor-pointer text-white hover:text-red-500" onClick={diceInvisibleHandle}> Close </h1>    
             </div> }
 
@@ -194,6 +185,14 @@ export const  Commander= () => {
                 <DiceSix visible={diceVisible}/>
                 <h1 className="hover:cursor-pointer text-white hover:text-red-500" onClick={diceInvisibleHandle}> Close </h1>    
             </div> }
+                    </div>
+                
+                </div>
+            </div>
+            
+            )}
+
+            
             
             
             

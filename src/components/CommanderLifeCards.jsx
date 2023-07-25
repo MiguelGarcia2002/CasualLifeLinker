@@ -26,7 +26,7 @@
             }, 2000);
         }
 
-        const changeColor = () =>{
+        const knockOut = () =>{
             if(life <=0){
                 setCardColor("bg-black")
             }
@@ -36,7 +36,7 @@
         }
 
         useEffect(() =>{
-            changeColor()
+            knockOut()
         }, [life])
 
         const addCommanderDamage = () =>{
@@ -56,7 +56,7 @@
                 <span className="text-3xl flex justify-center pt-1 "> {playerName}</span>
                 <hr  className="mt-2 pt-2 border-redViolet"/>
                 
-                <span onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</span>
+                <h1 onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</h1>
 
                 <div className="flex  items-center flex-col"> 
                     <div className="flex flex-row items-center justify-center gap-x-8">
