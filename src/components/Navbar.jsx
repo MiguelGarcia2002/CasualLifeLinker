@@ -15,7 +15,7 @@ export const Navbar = () =>{
     }
 
     return(
-        <div className="w-full sticky top-0 left-0  bg-verdigris  ">
+        <div className="w-full sticky top-0 z-10 left-0  bg-verdigris  ">
             <div className="flex flex-row p-1 items-center justify-between">
                 <div className="flex hover:cursor-pointer">
                     <img  src={logo} className="h-20 object-contain hover:cursor-pointer" onClick={homeClick}/> 
