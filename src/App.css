@@ -2,9 +2,6 @@
   text-align: center;
 }
 
-
-
-
 .App-link {
   color: #61dafb;
 }
@@ -12,3 +9,7 @@
 .subtract-nav {
   height: calc(100vh - 104px);
 }
+
+
+
+

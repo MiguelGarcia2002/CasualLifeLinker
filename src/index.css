@@ -16,6 +16,36 @@ code {
   height: calc(100vh - 104px);
 }
 
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar {
+  width: 0.6vw; /* Set the width of the scrollbar */
+}
+
+/* Style for the scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #2c3539; /* Set the background color of the scrollbar handle */
+  border-radius: 8px; /* Set the border-radius of the scrollbar handle */
+}
+
+::-webkit-scrollbar-track{
+  background-color: #5555;
+}
+
+
+/* Style for the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2c3539; /* Set the background color of the scrollbar handle on hover */
+}
+
+/* Style for the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background-color: #555; /* Set the background color of the scrollbar track on hover */
+}
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

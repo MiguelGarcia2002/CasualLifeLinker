@@ -1,5 +1,6 @@
     import { useEffect, useState } from "react"
     import { CommanderDamageCards } from "./CommanderDamageCards"
+    import { CommanderDamageText } from "./CommanderDamageText" 
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
@@ -8,6 +9,8 @@
         const [plusVisible, setPlusVisible] = useState("invisible")
         const [minusVisible, setMinusVisible] = useState("invisible")
         const [commanderDamage, setCommanderDamage] = useState([ ])
+        const [switch1, setSwitch1] = useState(true)
+        const [switch2, setSwtich2] = useState(false)
 
         const lifeLoss =()=>{
             setLife(life-1)
@@ -51,32 +54,63 @@
             addCommanderDamage()
         }, [damageCount]) //What this dpeendency array means... it's the array that the useEffect depends on. the useEffect() updates based on the changes within in the array
 
+        const changeCard = () =>{
+            if (switch1 === false) {
+                setSwitch1(true)
+                setSwtich2(false)
+            }
+            else{
+                setSwitch1(false)
+                setSwtich2(true)
+            }
+        }
+
         return(
-            <div className={` ${cardColor} flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
-                <span className="text-3xl flex justify-center pt-1 "> {playerName}</span>
+                <div className={` ${cardColor} flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
+                
+            <div className="text-3xl flex justify-center pt-1  ">
+                <h1 onClick={changeCard} >{playerName}</h1>
+            </div>
+             
+
+
                 <hr  className="mt-2 pt-2 border-redViolet"/>
-                
-                <h1 onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</h1>
 
-                <div className="flex  items-center flex-col"> 
-                    <div className="flex flex-row items-center justify-center gap-x-8">
-                        <h1 className={`text-7xl  text-green-500 ${plusVisible}`}> +1 </h1>
-                        <h1 className="text-7xl my-7"> {life} </h1>
-                        <h1 className={`text-7xl  text-red-500 ${minusVisible}`}> -1</h1>  
+                {switch1 && <div className={`${switch1}`}>
+                    <span onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</span>
+
+                    <div className="flex  items-center flex-col"> 
+                        <div className="flex flex-row items-center justify-center gap-x-8">
+                            <h1 className={`text-7xl  text-green-500 ${plusVisible}`}> +1 </h1>
+                            <h1 className="text-7xl my-7"> {life} </h1>
+                            <h1 className={`text-7xl  text-red-500 ${minusVisible}`}> -1</h1>  
+                        </div>  
                     </div>
-                    
-                </div>
 
-                <span onClick={lifeLoss} className=" inline-block text-center hover:text-red-500 cursor-pointer text-3xl"> Life down</span>
+                    <span onClick={lifeLoss} className=" inline-block text-center hover:text-red-500 cursor-pointer text-3xl"> Life down</span>
 
-                <div className="flex flex-row space-x-2 justify-center">
-                    {Object.keys(commanderDamage).map ((player, index) =>(
-                        <CommanderDamageCards />
-                    ))}
-    
-                </div>
+                    <div className="flex flex-row space-x-2 justify-center">
+                        {Object.keys(commanderDamage).map ((player, index) =>(
+                            <CommanderDamageCards />
+                        ))}
+        
+                    </div>
                 
+                </div> }
 
+                {switch2 && <div className="pl-2 ">
+                    <div class="overflow-y-auto h-40 ...">
+                        
+                        
+                        <h1> Poison: 0 </h1>
+                        <CommanderDamageText />
+                        
+                        
+                    </div>    
+                </div>
+                }
+
+                
 
             </div>
         )
