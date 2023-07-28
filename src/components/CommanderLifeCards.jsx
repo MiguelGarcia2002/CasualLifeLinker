@@ -1,6 +1,7 @@
     import { useEffect, useState } from "react"
     import { CommanderDamageCards } from "./CommanderDamageCards"
     import { CommanderDamageText } from "./CommanderDamageText" 
+    import { Symbol } from "./Symbol" 
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
@@ -65,6 +66,7 @@
             }
         }
 
+
         return(
                 <div className={` ${cardColor} flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
                 
@@ -89,22 +91,29 @@
 
                     <span onClick={lifeLoss} className=" inline-block text-center hover:text-red-500 cursor-pointer text-3xl"> Life down</span>
 
-                    <div className="flex flex-row space-x-2 justify-center">
+                   {/* <div className="flex flex-row space-x-2 justify-center">
                         {Object.keys(commanderDamage).map ((player, index) =>(
                             <CommanderDamageCards />
                         ))}
         
-                    </div>
+                        </div> */}
                 
                 </div> }
 
                 {switch2 && <div className="pl-2 ">
-                    <div class="overflow-y-auto h-40 ...">
-                        
-                        
-                        <h1> Poison: 0 </h1>
-                        <CommanderDamageText />
-                        
+                    <div class="overflow-y-auto h-48 ...">
+                        {Object.keys(commanderDamage).map ((player, index) =>(
+                            <CommanderDamageText setSymbol={"CLB"} name = {"Commadner Damage 1"}/>
+                        ))}
+                    <CommanderDamageText setSymbol={"NPH"} name = {"poison"}/>
+                    <CommanderDamageText setSymbol={"NPH"}  name = {"poison"}/>    
+                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
+                    <CommanderDamageText setSymbol={"CLB"} name = {"poison"}/>  
+                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
+                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>  
+                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
+                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>  
+
                         
                     </div>    
                 </div>

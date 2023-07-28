@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { Symbol } from "./Symbol"
 
-export const CommanderDamageText = () =>{
+export const CommanderDamageText = ({name, setSymbol}) =>{
+
     const [commanderDamage, setCommanderDamage] = useState(0)
 
     const damage = () =>{
@@ -12,7 +14,8 @@ export const CommanderDamageText = () =>{
 
     return(
         <div className="flex items-center ">
-            <h1 className=" "> Commander Damage:  </h1>
+            <Symbol set={setSymbol}/>
+            <h1 className=" "> {name}  </h1>
             <h1 className="text-3xl">  {commanderDamage} </h1>
             <h1 className="text-3xl text-green-500 hover:cursor-pointer" onClick={damage}> + </h1>
             
