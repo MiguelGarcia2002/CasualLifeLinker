@@ -2,10 +2,12 @@
     import { CommanderDamageCards } from "./CommanderDamageCards"
     import { CommanderDamageText } from "./CommanderDamageText" 
     import { Symbol } from "./Symbol" 
+    import { TicketsSymbol } from "./TicketsSymbol"
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
-        const [life, setLife] = useState(hp)
+        const initialLife = parseInt(hp)
+        const [life, setLife] = useState(initialLife)
         const [cardColor, setCardColor] = useState("bg-redViolet")
         const [plusVisible, setPlusVisible] = useState("invisible")
         const [minusVisible, setMinusVisible] = useState("invisible")
@@ -74,8 +76,6 @@
                 <h1 onClick={changeCard} >{playerName}</h1>
             </div>
              
-
-
                 <hr  className="mt-2 pt-2 border-redViolet"/>
 
                 {switch1 && <div className={`${switch1}`}>
@@ -103,17 +103,12 @@
                 {switch2 && <div className="pl-2 ">
                     <div class="overflow-y-auto h-48 ...">
                         {Object.keys(commanderDamage).map ((player, index) =>(
-                            <CommanderDamageText setSymbol={"CLB"} name = {"Commadner Damage 1"}/>
+                            <CommanderDamageText setSymbol={"CLB"} trigger ={1} name = {`Commadner player ${index+1}` }/>
                         ))}
-                    <CommanderDamageText setSymbol={"NPH"} name = {"poison"}/>
-                    <CommanderDamageText setSymbol={"NPH"}  name = {"poison"}/>    
-                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
-                    <CommanderDamageText setSymbol={"CLB"} name = {"poison"}/>  
-                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
-                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>  
-                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>
-                    <CommanderDamageText setSymbol={"CLB"}  name = {"poison"}/>  
-
+                    <CommanderDamageText setSymbol={"NPH"} trigger = {1} name = {"Poison"}/>
+                    <CommanderDamageText setSymbol={"NPH"} trigger = {2}  name = {"Ticekts"}/>
+                    <CommanderDamageText setSymbol={"NPH"} trigger = {3}  name = {"Energy"}/>
+                       
                         
                     </div>    
                 </div>

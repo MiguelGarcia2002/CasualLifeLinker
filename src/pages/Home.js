@@ -18,13 +18,12 @@ export const Home = () =>{
     useEffect(() =>{
         const fetchData = async () =>{
             try{
-                const result = await fetch(`https://api.scryfall.com/sets/${"CLB"}`);
-                
-                const data = await result.json()
-                setCard(data.icon_svg_uri)  
-                
+              const result = await fetch(`https://svgs.scryfall.io/card-symbols/TK.svg`);
+              const data = await result.blob()
+              const dataUrl = URL.createObjectURL(data)
+              setCard(dataUrl)  
             }
-            catch (error){
+            catch(error){
                 console.log("The Fetch did not work F: \n", error)
             }
             
