@@ -46,7 +46,7 @@ code {
 @tailwind utilities;
 
 .custom-bg-image {
-  background-image: url(./images/lifelinkerBG.jpg);
+  background-image: url(./images/lifelinkBGdark.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;

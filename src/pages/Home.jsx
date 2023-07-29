@@ -43,9 +43,7 @@ export const Home = () => {
     <div className="flex flex-col w-full">
       <div className="text-white subtract-nav w-full subtract-nav">
         <div className=" custom-bg-image w-full p-0 h-full">
-          <div className=" h-full bg-black opacity-[60%]">
-            <h1>Life Linker Test</h1>
-          </div>
+          <h1 className="text-white text-2xl">Hello world</h1>
         </div>
       </div>
     </div>

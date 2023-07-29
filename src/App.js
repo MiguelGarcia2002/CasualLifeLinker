@@ -12,7 +12,7 @@ const App = () => {
   let componentClassName;
 
   return (
-    <div className="flex flex-col items-center w-full bg-quartz">
+    <div className="flex flex-col items-center w-full bg-black">
       <BrowserRouter>
         <Navbar />
         <Routes>

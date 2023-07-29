@@ -113,7 +113,7 @@ export const Commander = () => {
           <form className="flex flex-col ">
             <label className="bg-gray-500 text-2xl mt-4"> Player Count </label>
             <input
-              className="focus: outline-none focus:ring-0 focus:border-gray-600"
+              className="focus: outline-none focus:ring-0 focus:border-gray-600 pl-1"
               type="text"
               id="userCount"
               onChange={handlePlayerChange}
@@ -122,7 +122,7 @@ export const Commander = () => {
 
             <label className="text-2xl mt-4"> Starting Life: </label>
             <input
-              className="focus: outline-none focus:ring-0 focus:border-gray-600"
+              className="focus: outline-none focus:ring-0 focus:border-gray-600 p-1"
               type="text"
               id="lifeCount"
               onChange={handleLifeChange}
@@ -146,7 +146,7 @@ export const Commander = () => {
         <div className=" flex flex-wrap">
           <div className="flex subtract-nav ">
             <div className="">
-              <div className="flex space-x-2 flex-col bg-white rounded-md sticky top-11 z-0">
+              <div className="flex space-x-2 flex-col bg-white rounded-md sticky top-32 z-0">
                 <h1 className=" text-3xl bg-blue-500 rounded-md">
                   {" "}
                   Features!{" "}
