@@ -1,8 +1,6 @@
     import { useEffect, useState } from "react"
     import { CommanderDamageCards } from "./CommanderDamageCards"
     import { CommanderDamageText } from "./CommanderDamageText" 
-    import { Symbol } from "./Symbol" 
-    import { TicketsSymbol } from "./TicketsSymbol"
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
@@ -73,7 +71,7 @@
                 <div className={` ${cardColor} flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
                 
             <div className="text-3xl flex justify-center pt-1  ">
-                <h1 onClick={changeCard} >{playerName}</h1>
+                <h1 className="hover:cursor-pointer" onClick={changeCard} >{playerName}</h1>
             </div>
              
                 <hr  className="mt-2 pt-2 border-redViolet"/>

@@ -12,6 +12,11 @@ module.exports = {
         verdigris: '#00AFB9',
         quartz: '#E9DFE0'
       },
+      fontFamily:{
+        'nunito': ['nunito', 'sans-serif'],
+        'comic': ['Comic Neue', 'cursive'],
+        'sans': ['Source Sans Pro', 'sans-serif'],
+      }
     },
   },
   plugins: [],

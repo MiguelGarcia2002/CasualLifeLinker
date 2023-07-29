@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Symbol } from "./Symbol"
-import { TicketsSymbol } from "./TicketsSymbol" 
+import { BlobSvg } from "./BlobSvg.jsx" 
 
 export const CommanderDamageText = ({name, setSymbol, trigger}) =>{
 
@@ -35,8 +35,8 @@ export const CommanderDamageText = ({name, setSymbol, trigger}) =>{
     return(
         <div className="flex items-center ">
             { t1 &&  <Symbol set={setSymbol}/>}
-            { t2 &&  <TicketsSymbol trigger={1} set={setSymbol}/>}
-            { t3 &&  <TicketsSymbol trigger={2} set={setSymbol}/>}
+            { t2 &&  <BlobSvg trigger={1} set={setSymbol}/>}
+            { t3 &&  <BlobSvg trigger={2} set={setSymbol}/>}
             <h1 className=" "> {name}  </h1>
             <h1 className="text-3xl">  {commanderDamage} </h1>
             <h1 className="text-3xl text-green-500 hover:cursor-pointer" onClick={damage}> + </h1>

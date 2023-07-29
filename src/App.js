@@ -16,7 +16,7 @@ const  App = () => {
     <div className="flex flex-col items-center w-full bg-quartz ">
       
       <BrowserRouter>
-        <Navbar/>
+        
           <Routes>
             <Route path ="/" element = {<Home />}/> 
             <Route path ="/Home" element = {<Home />}/>

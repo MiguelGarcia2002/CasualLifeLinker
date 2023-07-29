@@ -49,3 +49,18 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-bg-image{
+  background-image: url(./images/lifelinkerBG.jpg);
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  
+  height: 100vh;
+
+  
+  box-shadow: inset 10px 10px 40px #000;
+}
+
+

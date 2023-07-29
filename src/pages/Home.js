@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react";
+import { Navbar } from "../components/Navbar";
 
 export const Home = () =>{
     const [card, setCard] = useState()
@@ -40,13 +41,13 @@ export const Home = () =>{
       }, [setCode]);*/
 
     return(
-        <div className="text-black">
-          <h2>Set Icon:</h2>
-          {setCard ? (
-            <img src={card} alt="Set Icon" />
-          ) : (
-            <p>Loading set icon...</p>
-          )}
+        <div className="text-white w-full">
+          <div className="custom-bg-image"> 
+            <Navbar />
+            <h1 className="text-3xl"> Casual Life LInker </h1>
+          </div>
+          
+          
         </div>
       );
 }

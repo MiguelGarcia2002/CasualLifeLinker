@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const TicketsSymbol = ({trigger}) =>{
+export const BlobSvg = ({trigger}) =>{
     const [symbol,setSymbol] = useState()
 
     let url 
@@ -15,6 +15,9 @@ export const TicketsSymbol = ({trigger}) =>{
     useEffect(() =>{
         const fetchData = async () =>{
             try{
+                //The two awaits are basically saying the two lines are retrieving the URL and blob, and stop the execution
+                //Until the promise has been fulfilled 
+                //For example the const result will not fully execute until the url comes back 
                 const result = await fetch(url);
                 const data = await result.blob()
                 const dataUrl = URL.createObjectURL(data)
