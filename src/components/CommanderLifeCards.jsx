@@ -68,7 +68,7 @@
 
 
         return(
-                <div className={` ${cardColor} flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
+                <div className={` ${cardColor} w-[320px] h-[270px] custom-playerBG-image flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet`}>
                 
             <div className="text-3xl flex justify-center pt-1  ">
                 <h1 className="hover:cursor-pointer" onClick={changeCard} >{playerName}</h1>
@@ -76,32 +76,30 @@
              
                 <hr  className="mt-2 pt-2 border-redViolet"/>
 
-                {switch1 && <div className={`${switch1}`}>
-                    <span onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</span>
+                {switch1 && <div className={`${switch1} `}>
+                    <div className="w-full  flex justify-center items-center">
+                        <span onClick={lifeGain} className=" inline-block text-center hover:text-green-500 cursor-pointer text-3xl "> Life up</span>  
+                    </div>
+                    
 
                     <div className="flex  items-center flex-col"> 
                         <div className="flex flex-row items-center justify-center gap-x-8">
                             <h1 className={`text-7xl  text-green-500 ${plusVisible}`}> +1 </h1>
-                            <h1 className="text-7xl my-7"> {life} </h1>
+                            <h1 className="text-7xl my-7 mr-5"> {life} </h1>
                             <h1 className={`text-7xl  text-red-500 ${minusVisible}`}> -1</h1>  
                         </div>  
                     </div>
-
-                    <span onClick={lifeLoss} className=" inline-block text-center hover:text-red-500 cursor-pointer text-3xl"> Life down</span>
-
-                   {/* <div className="flex flex-row space-x-2 justify-center">
-                        {Object.keys(commanderDamage).map ((player, index) =>(
-                            <CommanderDamageCards />
-                        ))}
-        
-                        </div> */}
+                    
+                    <div className="w-full flex justify-center items-center">
+                        <span onClick={lifeLoss} className=" inline-block text-center hover:text-red-500 cursor-pointer text-3xl"> Life down</span>
+                    </div>
                 
                 </div> }
 
                 {switch2 && <div className="pl-2 ">
                     <div class="overflow-y-auto h-48 ...">
                         {Object.keys(commanderDamage).map ((player, index) =>(
-                            <CommanderDamageText setSymbol={"CLB"} trigger ={1} name = {`Commadner player ${index+1}` }/>
+                            <CommanderDamageText setSymbol={"CLB"} trigger ={1} name = {`Commander Dmg ${index+1}` }/>
                         ))}
                     <CommanderDamageText setSymbol={"NPH"} trigger = {1} name = {"Poison"}/>
                     <CommanderDamageText setSymbol={"NPH"} trigger = {2}  name = {"Ticekts"}/>

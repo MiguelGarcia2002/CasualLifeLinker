@@ -37,9 +37,7 @@ code {
 }
 
 /* Style for the scrollbar track on hover */
-::-webkit-scrollbar-track:hover {
-  background-color: #555; /* Set the background color of the scrollbar track on hover */
-}
+
 
 @tailwind base;
 @tailwind components;
@@ -50,6 +48,60 @@ code {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-
+  
   box-shadow: inset 10px 10px 40px #000;
+  
+}
+
+.custom-dicetraybg-image {
+  background-image: url(./images/DiceTraybackground.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow: inset 10px 10px 40px #000;
+  
+}
+
+
+.custom-commanderbg-image {
+  background-image: url(./images/image.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow: inset 10px 10px 40px #000;
+  
+}
+
+.custom-commanderbattlefield-image {
+  background-image: url(./images/commanderBattleField.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow: inset 10px 10px 40px #000;
+  
+}
+
+.custom-playerBG-image {
+  background-image: url(./images/image\ \(3\).jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow: inset 10px 10px 40px #000;
+  
+}
+
+.custom-size-225{
+  font-size: 2.25rem
+}
+
+.custom-size-190{
+  font-size: 1.9rem
+}
+
+.custom-size-title{
+  font-size: 3.0rem
 }

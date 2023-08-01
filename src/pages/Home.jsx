@@ -6,44 +6,40 @@ export const Home = () => {
   const [card, setCard] = useState();
   const setCode = "M21";
 
-  /*fetch("https://api.magicthegathering.io/v1/sets")
-    .then((res) => res.json())
-    .then((data) =>{
-        console.log(data.sets.name)
-        setCard(data.sets[0].booster)
-    })*/
+  const commanderRoute = () =>{
+    window.location.pathname = "/Commander";
+  }
 
-  const url = "https://api.scryfall.com/sets";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetch(
-          `https://svgs.scryfall.io/card-symbols/TK.svg`
-        );
-        const data = await result.blob();
-        const dataUrl = URL.createObjectURL(data);
-        setCard(dataUrl);
-      } catch (error) {
-        console.log("The Fetch did not work F: \n", error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  /*useEffect(() => {
-        // Construct the set symbol URL based on the set code
-        const setSymbolURL = `https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=${setCode}&size=large`;
-    
-        // Set the state variable with the set symbol URL
-        setCard(setSymbolURL);
-      }, [setCode]);*/
+  const standardRoute = () =>{
+    window.location.pathname = "/Standard";
+  }
 
   return (
     <div className="flex flex-col w-full">
       <div className="text-white subtract-nav w-full subtract-nav">
-        <div className=" custom-bg-image w-full p-0 h-full">
-          <h1 className="text-white text-2xl">Hello world</h1>
+        <div className="flex flex-col items-center pb-20 justify-center custom-bg-image w-full h-full">
+          
+          <h1 className="text-white custom-size-225">Casual Life Linker</h1>
+          <h1> A web based personal life linker app </h1>
+          <div className="px-44 mt-6 text-center">
+            <p> LifeLinker is a web app designed to enhance the gaming experience 
+            for players of the popular card game Magic: The Gathering. Specifically tailored for 
+            Commander and 2v2 Standard formats, LifeLinker serves as a convenient and efficient life tracking tool. This app 
+            also has an array of features that are used in normal play such as dice rolling and coin flipping.</p>
+          </div>
+
+          <div className="pt-5">
+            <h1 className="text-2xl mb-10 flex justify-center"> Choose a format and start</h1>
+            <div className="flex justify-between space-x-10">
+              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" onClick={commanderRoute}>
+                <h1 className="text-2xl p-3 border border-white border-[1px] "> Commander </h1>
+              </div>
+              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" onClick={standardRoute}>
+                <h1 className="text-2xl p-3 border border-white border-[1px] "> 2v2/Standard </h1>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>

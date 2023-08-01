@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
     <div className="w-full sticky top-0 z-10 left-0  bg-verdigris font-sans ">
-      <div className="flex flex-row p-1 items-center justify-between">
+      <div className="flex text-white flex-row p-1 items-center justify-between">
         <div className="flex hover:cursor-pointer">
           <img
             src={logo}
@@ -35,7 +35,7 @@ export const Navbar = () => {
           <button
             onClick={commanderClick}
             href="/Commander"
-            className=" hover:bg-snow"
+            className="text-2xl "
           >
             {" "}
             Commander{" "}
@@ -43,7 +43,7 @@ export const Navbar = () => {
           <button
             onClick={standardClick}
             href="/Standard"
-            className="p-3 border-2 rounded-md hover:bg-snow h-12 "
+            className=" text-2xl  "
           >
             {" "}
             Standard

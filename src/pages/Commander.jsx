@@ -5,6 +5,7 @@ import { DiceTwenty } from "../components/DiceTwenty";
 import { DiceFour } from "../components/DiceFour";
 import { DiceSix } from "../components/DiceSixr";
 import { DiceTwelve } from "../components/DiceTwelve";
+import { Coin } from "../components/Coin";
 
 export const Commander = () => {
   const [card, setCard] = useState("");
@@ -23,13 +24,7 @@ export const Commander = () => {
   const [hiddenDice12, setHiddenDice12] = useState();
   const [hiddenDice6, setHiddenDice6] = useState();
   const [hiddenDice20, setHiddenDice20] = useState();
-  /*fetch("https://api.magicthegathering.io/v1/cards")
-    .then((res) => res.json())
-    .then((data) =>{
-        console.log(data.cards[0].name)
-        setCard(data.cards[0].name)
-    })
-    */
+  const [hiddenCoin, setCoinHidden] = useState();
 
   const handlePlayerChange = (e) => {
     setPlayerCount(e.target.value);
@@ -54,7 +49,7 @@ export const Commander = () => {
   };
 
   const isDisabled = () => {
-    return playerCount !== "" && life !== "";
+    return playerCount.trim() !== "" && life.trim() !== "" && !isNaN(playerCount) && !isNaN(life);
   };
   const ifDisabled = isDisabled() ? "bg-blue-500" : "bg-red-500";
 
@@ -62,10 +57,22 @@ export const Commander = () => {
     setLife(lifeTrack);
   };
 
+  const coinVisibleHandle= () => {
+    setDiceVisible(true);
+    setCoinHidden(true)
+
+    setHiddenDice6(false);
+    setHiddenDice12(false);
+    setHiddenDice4(false);
+    setHiddenDice20(false);
+  };
+
+
   const diceVisibleHandle6 = () => {
     setDiceVisible(true);
     setHiddenDice6(true);
 
+    setCoinHidden(false)
     setHiddenDice12(false);
     setHiddenDice4(false);
     setHiddenDice20(false);
@@ -75,6 +82,7 @@ export const Commander = () => {
     setDiceVisible(true);
     setHiddenDice4(true);
 
+    setCoinHidden(false)
     setHiddenDice12(false);
     setHiddenDice6(false);
     setHiddenDice20(false);
@@ -83,6 +91,7 @@ export const Commander = () => {
     setDiceVisible(true);
     setHiddenDice12(true);
 
+    setCoinHidden(false)
     setHiddenDice4(false);
     setHiddenDice6(false);
     setHiddenDice20(false);
@@ -91,44 +100,55 @@ export const Commander = () => {
     setDiceVisible(true);
     setHiddenDice20(true);
 
+    setCoinHidden(false)
     setHiddenDice12(false);
     setHiddenDice4(false);
     setHiddenDice6(false);
   };
 
   const diceInvisibleHandle = () => {
-    console.log("Dice visible was lcicked");
-    setDiceVisible(false);
+    console.log("Dice visible was clicked");
+    setCoinHidden(false);
     setHiddenDice12(false);
     setHiddenDice4(false);
     setHiddenDice20(false);
+    setHiddenDice6(false);
   };
 
-  return (
-    <div className="flex flex-wrap justify-center items-center">
-      {displayOptions && (
-        <div className="bg-gray-500 w-96 flex flex-col p-6 rounded-md">
-          <h1 className="text-white-500 text-3xl">Welcome to Commander</h1>
 
+
+  
+
+  return ( <>
+    
+          
+      {displayOptions && (
+      <div className="flex flex-col w-full">
+      <div className="text-white w-full subtract-nav">
+      <div className="flex flex-col items-center pb-20 justify-center custom-commanderbg-image w-full h-full">
+
+        <div className=" w-96 text-white flex flex-col justify-center items-center p-6 rounded-md">
+          <h1 className="text-white text-3xl custom-size-title mb-4">Commander </h1>
+          <p> The most casual and popular format in MTG </p>
+          <h1 className="custom-size-190"> Start a pod </h1>
           <form className="flex flex-col ">
-            <label className="bg-gray-500 text-2xl mt-4"> Player Count </label>
+            <label className=" text-2xl mt-4"> Player Count </label>
             <input
-              className="focus: outline-none focus:ring-0 focus:border-gray-600 pl-1"
+              className="bg-transparent focus:outline-none border border-white rounded-md focus:ring-0 p-1"
               type="text"
               id="userCount"
               onChange={handlePlayerChange}
               value={playerCount}
             />
 
-            <label className="text-2xl mt-4"> Starting Life: </label>
+            <label className="text-2xl mt-4"> Starting Life </label>
             <input
-              className="focus: outline-none focus:ring-0 focus:border-gray-600 p-1"
+              className="bg-transparent focus:outline-none border border-white rounded-md focus:ring-0 p-1"
               type="text"
               id="lifeCount"
               onChange={handleLifeChange}
               value={life}
             />
-
             <button
               className={`${ifDisabled} rounded-md p-2 mt-4 border-2 text-white-500 border-white-500 hover:bg-gray-500 w-56`}
               onClick={handleClick}
@@ -137,19 +157,27 @@ export const Commander = () => {
               Start Game
             </button>
           </form>
+          
+        </div>
+
+        </div>
+        </div>
         </div>
       )}
-
-      <div className="">{card}</div>
-
+          
       {display && (
-        <div className=" flex flex-wrap">
-          <div className="flex subtract-nav ">
-            <div className="">
+        <div className="flex flex-col w-full">
+        <div className=" subtract-nav w-full ">
+        <div className="flex flex-col items-center justify-center custom-commanderbattlefield-image w-full h-full">
+
+        <div className="h-full w-full">
+        <div className=" ml-5 ">
+          <div className="flex  ">
+            <div className=" ">
               <div className="flex space-x-2 flex-col bg-white rounded-md sticky top-32 z-0">
-                <h1 className=" text-3xl bg-blue-500 rounded-md">
+                <h1 className=" text-3xl text-white bg-blue-500 rounded-top-md">
                   {" "}
-                  Features!{" "}
+                  Options!{" "}
                 </h1>
 
                 <h1
@@ -182,23 +210,34 @@ export const Commander = () => {
                 </h1>
                 <h1 className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md">
                   {" "}
-                  Restart games
+                  Restart game
+                </h1>
+                <h1 className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
+                onClick={coinVisibleHandle}
+                >
+                  {" "}
+                  Flip a coin
                 </h1>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center">
+            <div className="flex pl-7 flex-wrap justify-center">
               {Object.keys(players).map((player, index) => (
                 <div>
                   <CommanderLifeCards
                     hp={life}
-                    playerName={"Jogoingo"}
+                    playerName={`Player ` + (index+1)}
                     damageCount={playerCount}
                   />{" "}
                 </div>
               ))}{" "}
-              {hiddenDice12 && (
-                <div className="flex flex-col items-center">
+
+              <div className=" ">
+                <div className="flex custom-dicetraybg-image justify-center items-center pt-5 w-[320px] h-[268px] bg-red-500 flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet">
+                <h1 className="text-3xl"> Dice Tray  </h1>
+
+                {hiddenDice12 && (
+                <div className="flex flex-col text-black items-center">
                   <DiceTwelve visible={diceVisible} />
                   <h1
                     className="hover:cursor-pointer text-white hover:text-red-500"
@@ -210,7 +249,7 @@ export const Commander = () => {
                 </div>
               )}
               {hiddenDice4 && (
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col text-black items-center">
                   <DiceFour visible={diceVisible} />
                   <h1
                     className="hover:cursor-pointer text-white hover:text-red-500"
@@ -222,7 +261,7 @@ export const Commander = () => {
                 </div>
               )}
               {hiddenDice20 && (
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col text-black items-center">
                   <DiceTwenty visible={diceVisible} />
                   <h1
                     className="hover:cursor-pointer text-white hover:text-red-500"
@@ -234,7 +273,7 @@ export const Commander = () => {
                 </div>
               )}
               {hiddenDice6 && (
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col text-black items-center">
                   <DiceSix visible={diceVisible} />
                   <h1
                     className="hover:cursor-pointer text-white hover:text-red-500"
@@ -245,10 +284,39 @@ export const Commander = () => {
                   </h1>
                 </div>
               )}
+
+              {hiddenCoin && (
+                <div className="flex flex-col text-black items-center">
+                  <Coin visible={diceVisible} />
+                  <h1
+                    className="hover:cursor-pointer text-white hover:text-red-500"
+                    onClick={diceInvisibleHandle}
+                  >
+                    {" "}
+                    Close{" "}
+                  </h1>
+                </div>
+              )}
+
+              </div>
+              </div>
+              
+
+
+              
             </div>
+
+
           </div>
         </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
       )}
-    </div>
+
+    </>
+
   );
 };

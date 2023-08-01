@@ -10,14 +10,15 @@ export const DiceFour = ({ visible}) =>{
   useEffect(()=>{
       if(visible){
           setDisplayResult(false)
+
           const rollDice = () => { 
-          const randomNum = Math.floor(Math.random() * 4) + 1;
-          setDiceNum((prevDiceNum) => [...prevDiceNum, randomNum]);
+            const randomNum = Math.floor(Math.random() * 4) + 1;
+            setDiceNum((prevDiceNum) => [...prevDiceNum, randomNum]);
           };
           
           if (diceNum.length < 6) {
-          const interval = setInterval(rollDice, 400);
-          return () => clearInterval(interval);
+            const interval = setInterval(rollDice, 400);
+            return () => clearInterval(interval);
           }
           setDisplayResult(true)
       }
@@ -26,7 +27,6 @@ export const DiceFour = ({ visible}) =>{
   const handleRoll = () => {
     setDiceNum([])
   };
-
 
 
   return(
