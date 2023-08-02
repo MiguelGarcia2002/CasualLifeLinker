@@ -1,6 +1,5 @@
     import { useEffect, useState } from "react"
-    import { CommanderDamageCards } from "./CommanderDamageCards"
-    import { CommanderDamageText } from "./CommanderDamageText" 
+    import { CommanderDamageText } from "../CommanderDamageText"
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
@@ -97,7 +96,7 @@
                 </div> }
 
                 {switch2 && <div className="pl-2 ">
-                    <div class="overflow-y-auto h-48 ...">
+                    <div class="overflow-y-auto h-48 ">
                         {Object.keys(commanderDamage).map ((player, index) =>(
                             <CommanderDamageText setSymbol={"CLB"} trigger ={1} name = {`Commander Dmg ${index+1}` }/>
                         ))}

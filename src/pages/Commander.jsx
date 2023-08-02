@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CommanderLifeCards } from "../components/CommanderLifeCards";
+import { CommanderLifeCards } from "../components/LifeCardsComponents/CommanderLifeCards";
 import { useEffect } from "react";
 import { DiceTwenty } from "../components/DiceTwenty";
 import { DiceFour } from "../components/DiceFour";
@@ -174,50 +174,38 @@ export const Commander = () => {
         <div className=" ml-5 ">
           <div className="flex  ">
             <div className=" ">
-              <div className="flex space-x-2 flex-col bg-white rounded-md sticky top-32 z-0">
-                <h1 className=" text-3xl text-white bg-blue-500 rounded-top-md">
-                  {" "}
-                  Options!{" "}
+              <div className="flex justify-center bg-verdigris items-center flex-col rounded-md sticky top-32 z-0">
+                <h1 className=" text-3xl text-white bg-blue-500 p-2 rounded-top-md">
+                  
+                  Options
+                </h1>
+
+                <div className=" bg-verdigris text-white ">
+                    <h1 className="text-1xl hover:cursor-pointer p-1 hover:text-orange-200" onClick={diceVisibleHandle6}> Roll a D6</h1>
+                  <h1
+                  className="text-1xl hover:cursor-pointer p-1 hover:text-orange-200"
+                  onClick={diceVisibleHandle4}> 
+                  Roll a D4
                 </h1>
 
                 <h1
-                  className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
-                  onClick={diceVisibleHandle6}
-                >
-                  {" "}
-                  Roll a D6{" "}
+                  className="text-1xl hover:cursor-pointer p-1 hover:text-orange-200"
+                  onClick={diceVisibleHandle12}>         
+                  Roll a D12
                 </h1>
+
                 <h1
-                  className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
-                  onClick={diceVisibleHandle4}
-                >
-                  {" "}
-                  Roll a D4{" "}
+                  className="text-1xl hover:cursor-pointer p-1 hover:text-orange-200"
+                  onClick={diceVisibleHandle20}>  
+                  Roll a D20
                 </h1>
-                <h1
-                  className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
-                  onClick={diceVisibleHandle12}
-                >
-                  {" "}
-                  Roll a D12{" "}
-                </h1>
-                <h1
-                  className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
-                  onClick={diceVisibleHandle20}
-                >
-                  {" "}
-                  Roll a D20{" "}
-                </h1>
-                <h1 className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md">
-                  {" "}
-                  Restart game
-                </h1>
-                <h1 className="text-1xl hover:bg-blue-500 hover:cursor-pointer border-2 p-1 rounded-md"
-                onClick={coinVisibleHandle}
-                >
-                  {" "}
+
+                <h1 className="text-1xl hover:cursor-pointer p-1 hover:text-orange-200"
+                  onClick={coinVisibleHandle}>
                   Flip a coin
                 </h1>
+
+                </div>
               </div>
             </div>
 

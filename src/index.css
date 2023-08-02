@@ -94,6 +94,16 @@ code {
   
 }
 
+.custom-standardBG-image {
+  background-image: url(./images/StandardBG.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow: inset 10px 10px 40px #000;
+  
+}
+
 .custom-size-225{
   font-size: 2.25rem
 }

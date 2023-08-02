@@ -27,7 +27,6 @@ export const Navbar = () => {
             style={{ marginLeft: "0" }}
             onClick={homeClick}
           >
-            {" "}
             Casual Life Linker
           </h1>
         </div>
@@ -35,17 +34,15 @@ export const Navbar = () => {
           <button
             onClick={commanderClick}
             href="/Commander"
-            className="text-2xl "
+            className="text-2xl hover:text-orange-300"
           >
-            {" "}
-            Commander{" "}
+            Commander
           </button>
           <button
             onClick={standardClick}
             href="/Standard"
-            className=" text-2xl  "
+            className=" text-2xl  hover:text-orange-300"
           >
-            {" "}
             Standard
           </button>
         </div>
