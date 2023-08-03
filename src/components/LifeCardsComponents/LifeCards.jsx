@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { CommanderDamageText } from "../CommanderDamageText"
+import { CommanderDamageText } from "./CommanderDamageText"
 
 export const LifeCards = ({hp, playerName}) =>{
     const [life,setLife] = useState(hp)
@@ -53,7 +53,7 @@ export const LifeCards = ({hp, playerName}) =>{
     return(
         <>
          <div className={` ${cardColor} flex flex-col text-snow custom-playerBG-image w-[364px] h-[370px] rounded-lg shadow-lg border-2 border-redViolet`}>
-            <span className="text-3xl flex justify-center pt-1 " onClick={switchCardFace}> {playerName}</span>
+            <span className="text-3xl flex justify-center pt-1 hover:cursor-pointer " onClick={switchCardFace}> {playerName}</span>
             <hr  className="mt-2 pt-2 border-white"/>
             
             {switch1 && 

@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { CommanderLifeCards } from "../components/LifeCardsComponents/CommanderLifeCards";
-import { useEffect } from "react";
-import { DiceTwenty } from "../components/DiceTwenty";
-import { DiceFour } from "../components/DiceFour";
-import { DiceSix } from "../components/DiceSixr";
-import { DiceTwelve } from "../components/DiceTwelve";
-import { Coin } from "../components/Coin";
+import { DiceTwenty } from "../components/TrayComponents/DiceTwenty";
+import { DiceFour } from "../components/TrayComponents/DiceFour";
+import { DiceSix } from "../components/TrayComponents/DiceSixr";
+import { DiceTwelve } from "../components/TrayComponents/DiceTwelve";
+import { Coin } from "../components/TrayComponents/Coin";
 
 export const Commander = () => {
   const [card, setCard] = useState("");

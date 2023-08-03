@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { Symbol } from "./Symbol"
-import { BlobSvg } from "./BlobSvg.jsx" 
+import { Symbol } from "../SvgComponents/Symbol.jsx"
+import { BlobSvg } from "../SvgComponents/BlobSvg.jsx" 
 
 export const CommanderDamageText = ({name, setSymbol, trigger}) =>{
 

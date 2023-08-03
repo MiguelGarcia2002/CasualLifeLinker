@@ -1,9 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { Navbar } from "../components/Navbar";
-
 export const Home = () => {
-  const [card, setCard] = useState();
   const setCode = "M21";
 
   const commanderRoute = () =>{

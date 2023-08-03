@@ -1,8 +1,5 @@
 import { useRef, useState } from "react"
 import { useEffect } from "react"
-import image1 from '../images/logo.png'
-import image2 from '../images/logo1.png'
-import image3 from '../images/logo2.png'
 
 export const DiceSix = ({ visible}) =>{
 

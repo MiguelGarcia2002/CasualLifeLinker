@@ -65,7 +65,7 @@ code {
 
 
 .custom-commanderbg-image {
-  background-image: url(./images/image.jpg);
+  background-image: url(./images/CommanderBG.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,7 +85,7 @@ code {
 }
 
 .custom-playerBG-image {
-  background-image: url(./images/image\ \(3\).jpg);
+  background-image: url(./images/PlayerBg.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;

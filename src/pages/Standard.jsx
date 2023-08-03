@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { LifeCards } from "../components/LifeCardsComponents/LifeCards.jsx" 
-import { DiceTwenty } from "../components/DiceTwenty";
-import { DiceFour } from "../components/DiceFour";
-import { DiceSix } from "../components/DiceSixr";
-import { DiceTwelve } from "../components/DiceTwelve";
-import { Coin } from "../components/Coin";
+import { DiceTwenty } from "../components/TrayComponents/DiceTwenty";
+import { DiceFour } from "../components/TrayComponents/DiceFour";
+import { DiceSix } from "../components/TrayComponents/DiceSixr";
+import { DiceTwelve } from "../components/TrayComponents/DiceTwelve";
+import { Coin } from "../components/TrayComponents/Coin";
 
 
 export const Standard = ()=>{
@@ -127,7 +127,7 @@ export const Standard = ()=>{
 
             </div>
 
-                <LifeCards hp= {20} playerName={"BagelsOstrich"}/>
+                <LifeCards hp= {20} playerName={"Player1"}/>
 
                 <div className="flex custom-dicetraybg-image justify-center items-center pt-5 w-[280px] h-[255px] bg-red-500 flex flex-col text-snow  w-80 rounded-lg shadow-lg m-3 overflow-hidden border-2 border-redViolet">
                 
@@ -198,7 +198,7 @@ export const Standard = ()=>{
                 </div>
 
 
-                <LifeCards hp= {20} playerName={"Metalsonic102"}/>
+                <LifeCards hp= {20} playerName={"Player 2"}/>
             </div>
 
         </div>

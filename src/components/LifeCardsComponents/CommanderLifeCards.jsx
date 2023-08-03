@@ -1,5 +1,5 @@
     import { useEffect, useState } from "react"
-    import { CommanderDamageText } from "../CommanderDamageText"
+    import { CommanderDamageText } from "./CommanderDamageText"
 
 
     export const CommanderLifeCards = ({hp, playerName, damageCount}) =>{
