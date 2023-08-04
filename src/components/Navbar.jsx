@@ -24,7 +24,6 @@ export const Navbar = () => {
           <h1
             className="text-3xl hover:cursor-pointer flex justify-center items-center "
             style={{ marginLeft: "0" }}
-            onClick={homeClick}
           >
             <Link to="/Home" className="hover:cursor-pointer">
               Casual Life Linker
