@@ -1,13 +1,6 @@
+import { Link } from "react-router-dom";
+
 export const Home = () => {
-  const setCode = "M21";
-
-  const commanderRoute = () =>{
-    window.location.pathname = "/Commander";
-  }
-
-  const standardRoute = () =>{
-    window.location.pathname = "/Standard";
-  }
 
   return (
     <div className="flex flex-col w-full">
@@ -26,11 +19,15 @@ export const Home = () => {
           <div className="pt-5">
             <h1 className="text-2xl mb-10 flex justify-center"> Choose a format and start</h1>
             <div className="flex justify-between space-x-10">
-              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" onClick={commanderRoute}>
-                <h1 className="text-2xl p-3 border border-white border-[1px] "> Commander </h1>
+              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" >
+                <Link to="/Standard">
+                  <h1 className="text-2xl p-3 border border-white border-[1px] "> Commander </h1>
+                </Link>
               </div>
-              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" onClick={standardRoute}>
-                <h1 className="text-2xl p-3 border border-white border-[1px] "> 2v2/Standard </h1>
+              <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" >
+              <Link to="/Standard">
+                  <h1 className="text-2xl p-3 border border-white border-[1px] "> Commander </h1>
+                </Link>
               </div>
             </div>
           </div>
@@ -39,4 +36,5 @@ export const Home = () => {
       </div>
     </div>
   );
+  
 };

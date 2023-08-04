@@ -31,19 +31,23 @@ export const Navbar = () => {
           </h1>
         </div>
         <div className="flex justify-center items-center space-x-4 mr-8">
+
           <button
-            onClick={commanderClick}
             href="/Commander"
             className="text-2xl hover:text-orange-300"
           >
-            Commander
+            <Link to="/Commander" className="hover:cursor-pointer">
+              Commander
+            </Link>            
           </button>
+
           <button
-            onClick={standardClick}
             href="/Standard"
             className=" text-2xl  hover:text-orange-300"
           >
-            Standard
+            <Link to="/Standard" className="hover:cursor-pointer">
+              Standard
+            </Link>  
           </button>
         </div>
       </div>
