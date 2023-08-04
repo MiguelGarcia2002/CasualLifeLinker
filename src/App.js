@@ -2,9 +2,7 @@ import React from "react";
 import { Home } from "./pages/Home";
 import { Standard } from "./pages/Standard";
 import { Commander } from "./pages/Commander";
-import { useState } from "react";
 import { Navbar } from "./components/Navbar";
-import { Testing } from "./pages/Testing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
