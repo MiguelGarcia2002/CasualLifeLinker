@@ -20,7 +20,7 @@ export const Home = () => {
             <h1 className="text-2xl mb-10 flex justify-center"> Choose a format and start</h1>
             <div className="flex justify-between space-x-10">
               <div className="hover:bg-white hover:bg-opacity-20 hover:cursor-pointer" >
-                <Link to="/Standard">
+                <Link to="/Commander">
                   <h1 className="text-2xl p-3 border border-white border-[1px] "> Commander </h1>
                 </Link>
               </div>
@@ -36,5 +36,5 @@ export const Home = () => {
       </div>
     </div>
   );
-  
+
 };
